@@ -11,6 +11,7 @@ import {
   HiTable,
   HiUser,
 } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function MySidebar() {
   return (
@@ -20,7 +21,7 @@ export default function MySidebar() {
           <FlowbiteSidebar.Item href="#" icon={HiChartPie}>
             Dashboard
           </FlowbiteSidebar.Item>
-          
+
           <FlowbiteSidebar.Item href="#" icon={HiInbox}>
             Inbox
           </FlowbiteSidebar.Item>
@@ -41,7 +42,7 @@ export default function MySidebar() {
             label="More"
             renderChevronIcon={(theme, open) => {
               const IconComponent = open ? HiOutlineMinusSm : HiOutlinePlusSm;
-              return <IconComponent   aria-hidden className="w-5 h-5" />;
+              return <IconComponent aria-hidden className="w-5 h-5" />;
             }}
           >
             <FlowbiteSidebar.Item href="#">Products</FlowbiteSidebar.Item>
@@ -49,7 +50,9 @@ export default function MySidebar() {
             <FlowbiteSidebar.Item href="#">Refunds</FlowbiteSidebar.Item>
             <FlowbiteSidebar.Item href="#">Shipping</FlowbiteSidebar.Item>
           </FlowbiteSidebar.Collapse>
-          <Button className="w-[200px] flex items-center" >create</Button>
+          <Link to={"/createArticle"}>
+            <Button className="w-[200px] flex items-center">create</Button>
+          </Link>
         </FlowbiteSidebar.ItemGroup>
       </FlowbiteSidebar.Items>
     </FlowbiteSidebar>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { fetchArticles } from "../features/counterSlice";
 import { Card, Button } from "flowbite-react";
 import { fetchData } from "../my-utils/request";
+import { Link } from "react-router-dom";
 
 function Home() {
   // const dispatch = useDispatch();
@@ -60,7 +61,10 @@ function Home() {
                 </p>
               </div>
               <Button>
-                Read more
+               <div className="flex items-start">
+              <Link 
+              to={"/cards"}
+              >Read More</Link>
                 <svg
                   className="-mr-1 ml-2 h-4 w-4"
                   fill="currentColor"
@@ -73,6 +77,7 @@ function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
+               </div>
               </Button>
             </Card>
           ))}
